@@ -6,9 +6,9 @@ export default new Vuex.Store({
   strict: true,
     state: {
         users: {
-            Name: '',
-            Email: '',
-            Password: ''
+            Name: null,
+            Email: null,
+            Password: null,
         }
     },
     getters: {
@@ -18,7 +18,6 @@ export default new Vuex.Store({
       getUserEmail: state => {
         return state.users.Email;
       },
-      
     },
 
     mutations: {

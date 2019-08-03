@@ -2,16 +2,15 @@
   <div class="dashboard">
     <h1>Dash Board</h1>
     <el-card class="box-card">
-      <h1>Welcome {{ NameData }} !</h1>
+      <h1>Welcome {{ NameData}} !</h1>
       <p>You sign up email is {{ EmailData}}</p>
-      <el-button type="primary" @click="clearData">Clear Data</el-button>
+      <el-button type="primary" @click="clearUser">Clear Data</el-button>
     </el-card>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
-import { mapState } from "vuex";
+import { mapGetters, mapActions, } from "vuex";
 
 export default {
 
@@ -28,8 +27,11 @@ export default {
       
   },
 methods:{
-     clearData () {
+  
+  ...mapActions(['clearData']),
+     clearUser () {
       localStorage.clear();
+      return this.clearData;
   }
 },
 
